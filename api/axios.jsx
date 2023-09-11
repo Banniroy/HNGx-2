@@ -3,3 +3,7 @@ import axios from "axios";
 export default axios.create({
 	baseURL: "https://api.themoviedb.org/3/movie",
 });
+
+export const tmdbApi = axios.create({
+	baseURL: "https://api.themoviedb.org/3",
+});

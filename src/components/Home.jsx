@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 
-const Home = ({ movies, randomMovie }) => {
+const Home = ({ posterBaseUrl, movies, randomMovie }) => {
 	return (
 		<main>
 			<Header />
@@ -28,12 +30,17 @@ const Home = ({ movies, randomMovie }) => {
 				<div className="flex justify-between items-center w-[81%] my-8 mb-14">
 					<h1 className="font-extrabold text-2xl">Featured Movies</h1>
 					<Link className="text-pink-600 font-bold">
-						See more{" >"}
+						See more &nbsp;
+						<FontAwesomeIcon icon={faGreaterThan} />
 					</Link>
 				</div>
 				<div className=" w-fit h-full flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-x-16 gap-y-28 ">
 					{movies.map((movie) => (
-						<Card key={movie.id} movie={movie} />
+						<Card
+							key={movie.id}
+							movie={movie}
+							posterBaseUrl={posterBaseUrl}
+						/>
 					))}
 				</div>
 			</section>

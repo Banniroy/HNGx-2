@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ movie }) => {
-	// Define the base URL for poster images
-	const posterBaseUrl = "https://image.tmdb.org/t/p/w500"; // You may need to adjust the image size (w500) based on your needs
-
+const Card = ({ posterBaseUrl, movie }) => {
 	return (
 		<Link
 			to={`/movie/${movie.id}`}
@@ -17,9 +14,6 @@ const Card = ({ movie }) => {
 				data-testid="movie-poster"
 				className="h-auto max-w-xs pb-3"
 			/>
-			<p data-testid="movie-release-date">
-				Release Date: {movie.release_date}
-			</p>
 			<div className="flex flex-col pt-3">
 				<h2
 					data-testid="movie-title"
@@ -28,9 +22,6 @@ const Card = ({ movie }) => {
 					{movie.title}
 				</h2>
 				<p data-testid="movie-release-date" className="pb-2">
-					Release Date: {movie.release_date}
-				</p>
-				<p data-testid="movie-release-date">
 					Release Date: {movie.release_date}
 				</p>
 			</div>

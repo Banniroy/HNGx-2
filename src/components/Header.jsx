@@ -1,4 +1,5 @@
 import React from "react";
+import SearchInput from "./SearchInput";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faTv } from "@fortawesome/free-solid-svg-icons";
@@ -21,16 +22,7 @@ const Header = () => {
 				<span>MovieBox</span>
 			</Link>
 			<div className="w-1/2 h-[60%] hidden md:flex">
-				<div className="border rounded-lg pr-2 h-full w-full flex justify-between items-center">
-					<input
-						type="text"
-						className="bg-transparent px-3 py-[2px] w-4/5 h-[80%] text-white"
-						placeholder="What do you want to watch?"
-					/>
-					<Link>
-						<FontAwesomeIcon icon={faMagnifyingGlass} />
-					</Link>
-				</div>
+				<SearchInput />
 			</div>
 			<div className="flex items-center justify-end md:justify-around w-[30%] md:w-[20%] flex-row-reverse md:flex-row">
 				<button className="hidden md:block">
