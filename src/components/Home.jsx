@@ -34,8 +34,8 @@ const Home = ({ posterBaseUrl, movies, randomMovie }) => {
 						<FontAwesomeIcon icon={faGreaterThan} />
 					</Link>
 				</div>
-				<div className=" w-fit h-full flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-x-16 gap-y-28 ">
-					{movies.map((movie) => (
+				<div className="grid w-[95%] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+					{movies.slice(0, 10).map((movie) => (
 						<Card
 							key={movie.id}
 							movie={movie}
