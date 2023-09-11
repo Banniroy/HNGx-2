@@ -19,10 +19,10 @@ function App() {
 				if (response.status === 200) {
 					const top10Movies = response.data.results.slice(0, 10);
 					setMovies(top10Movies);
-					// console.log(
-					// 	"Fetched data in JSON format:",
-					// 	JSON.stringify(top10Movies, null, 2)
-					// );
+					console.log(
+						"Fetched data in JSON format:",
+						JSON.stringify(top10Movies, null, 2)
+					);
 				}
 			} catch (error) {
 				console.error("Error fetching top 10 movies:", error);
