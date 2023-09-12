@@ -55,11 +55,11 @@ const SearchInput = () => {
 				<div className="mt-4 flex flex-col items-center">
 					{loading && <Loading />}
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+					<div className=" grid w-fit grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 						{results.map((movie) => (
 							<div
 								key={movie.id}
-								className="bg-white p-4 border rounded w-fit shadow-md"
+								className="bg-white p-4 border rounded w-[23rem] shadow-md"
 							>
 								{movie.poster_path ? (
 									<img
