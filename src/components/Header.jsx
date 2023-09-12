@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+wimport React, { useState } from "react";
 import SearchInput from "./SearchInput";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +24,7 @@ const Header = () => {
 				</span>
 				<span>MovieBox</span>
 			</Link>
-			<div className="w-1/2 h-[100%] hidden md:flex md:justify-center">
+			<div className="w-1/2 h-[100%] hidden md:flex md:justify-center border border-red-800">
 				<input
 					type="text"
 					className="bg-transparent outline-none px-3 py-[2px] w-4/5 h-full text-black"
