@@ -11,7 +11,7 @@ const Card = ({ posterBaseUrl, movie }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md">
+    <div className="bg-white rounded-lg w-[95%] shadow-md">
       <Link to={`/movie/${movie.id}`} data-testid="movie-link">
         <img
           src={`${posterBaseUrl}${movie.poster_path}`}
