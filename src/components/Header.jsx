@@ -24,7 +24,7 @@ const Header = () => {
 				</span>
 				<span>MovieBox</span>
 			</Link>
-			<div className="w-1/2 h-[100%] hidden md:flex">
+			<div className="w-1/2 h-[100%] hidden md:flex md:justify-center">
 				<input
 					type="text"
 					className="bg-transparent outline-none px-3 py-[2px] w-4/5 h-full text-black"
