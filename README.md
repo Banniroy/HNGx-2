@@ -37,6 +37,6 @@ Host your frontend application on a platform of your choice (e.g., GitHub Pages,
 Provide clear instructions on how to run your project locally in your README.md file.
 Ensure that the code is well-documented and organized.
 ## Technologies Used
-React
-JavaScript
-Tailwind CSS
+<p>React</p>
+<p>JavaScript</p>
+<p>Tailwind CSS</p>
