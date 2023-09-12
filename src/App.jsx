@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams, useLocation } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails";
 import Home from "./components/Home";
 import SearchInput from "./components/SearchInput";
 
 function App() {
+const location = useLocation();
+	
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
+	
 	return (
 		<main className="App h-full w-full">
 			<Routes>
