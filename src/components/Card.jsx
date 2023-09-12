@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa"; // Import the FontAwesome heart icon
 import { useToasts } from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons"; // Import your custom heart icon
 
 const Card = ({ posterBaseUrl, movie }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -49,7 +50,8 @@ const Card = ({ posterBaseUrl, movie }) => {
             isFavorite ? "text-red-500" : "text-gray-400"
           }`}
         >
-          <FaHeart />
+          {/* Use your custom FontAwesome heart icon */}
+          <FontAwesomeIcon icon={faHeart} />
         </button>
       </div>
     </Link>
