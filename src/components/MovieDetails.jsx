@@ -44,7 +44,7 @@ const MovieDetails = () => {
 	return (
     <div className="flex flex-row h-screen w-full">
       <SideBbar />
-      <section className="mx-6 w-[95%] md:w-[80%] flex flex-col items-center">
+      <section className="mx-6 w-[100%] md:w-[80%] flex flex-col items-center">
         <div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
           <img
             src={`${posterBaseUrl}${movie.poster_path}`}
@@ -61,7 +61,7 @@ const MovieDetails = () => {
             <div className="w-full md:w-3/5 h-40 p-4">
               <p data-testid="movie-overview">{movie.overview}</p>
             </div>
-            <div className="w-full md:w-2/5 h-40 p-4 border rounded-lg border-rose-700">
+            <div className="w-full md:w-2/5 h-40 p-4 md:border rounded-lg border-rose-700">
               <p data-testid="movie-release-date">
                 Release Date (UTC): {movie.release_date}
               </p>
