@@ -40,16 +40,17 @@ const Home = () => {
 					</Link>
 				</div>
 				<div className="flex justify-center">
-					<div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
-						{movies.slice(0, 10).map((movie) => (
-							<Card
-								key={movie.id}
-								movie={movie}
-								posterBaseUrl={posterBaseUrl}
-							/>
-						))}
-					</div>
-				</div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-full">
+    {movies.slice(0, 10).map((movie) => (
+      <Card
+        key={movie.id}
+        movie={movie}
+        posterBaseUrl={posterBaseUrl}
+      />
+    ))}
+  </div>
+</div>
+
 			</section>
 			<Footer />
 		</main>
