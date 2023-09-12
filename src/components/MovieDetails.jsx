@@ -42,31 +42,36 @@ const MovieDetails = () => {
 	}
 
 	return (
-		<div className="flex flex-row h-screen w-full">
-			<SideBbar />
-			<section className=" mx-6 w-[80%] flex flex-col items-center">
-				<div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
-					<img
-						src={`${posterBaseUrl}${movie.poster_path}`}
-						alt={movie.title}
-						className="w-full h-auto object-contain"
-					/>
-				</div>
+    <div className="flex flex-row h-screen w-full">
+      <SideBbar />
+      <section className="mx-6 w-[80%] flex flex-col items-center">
+        <div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
+          <img
+            src={`${posterBaseUrl}${movie.poster_path}`}
+            alt={movie.title}
+            className="w-full h-auto object-contain"
+          />
+        </div>
 
-				<div className=" rounded-2xl w-[90%] h-[18rem] mt-8 text-gray-900">
-					<section className=" w-full flex items-center h-8">
-						<h2 className="movie-title">{movie.title}</h2>
-					</section>
-					<section className="flex mt-4">
-						<div className="w-3/5 h-40">
-							<p>{movie.overview}</p>
-						</div>
-						<div className="w-2/5 h-40"></div>
-					</section>
-				</div>
-			</section>
-		</div>
-	);
+        <div className="rounded-2xl w-[90%] h-[18rem] mt-8 text-gray-900">
+          <section className="w-full flex items-center h-8">
+            <h2 data-testid="movie-title">{movie.title}</h2>
+          </section>
+          <section className="flex mt-4">
+            <div className="w-3/5 h-40">
+              <p data-testid="movie-overview">{movie.overview}</p>
+            </div>
+            <div className="w-2/5 h-40">
+              <p data-testid="movie-release-date">
+                Release Date (UTC): {movie.release_date}
+              </p>
+              <p data-testid="movie-runtime">Runtime (minutes): {movie.runtime}</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default MovieDetails;
