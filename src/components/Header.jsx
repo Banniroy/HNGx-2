@@ -36,6 +36,7 @@ const Header = () => {
 					}}
 				/>
 				<Link
+					to="/search"
 					className="h-full w-[20%]"
 					onClick={(e) => {
 						e.preventDefault();
