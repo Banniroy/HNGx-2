@@ -13,7 +13,7 @@ const Card = ({ posterBaseUrl, movie }) => {
   return (
     <Link
       to={`/movie/${movie.id}`}
-      className="flex flex-col max-w-xs text-gray-900"
+      className="grid text-gray-900 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
       data-testid="movie-card"
     >
       <img
