@@ -57,11 +57,11 @@ const MovieDetails = () => {
           <section className="w-full flex items-center h-8">
             <h2 data-testid="movie-title">{movie.title}</h2>
           </section>
-          <section className="flex mt-4">
-            <div className="w-3/5 h-40">
+          <section className="flex mt-4 gap-3">
+            <div className="w-3/5 h-40 border-rose-700 rounded-lg">
               <p data-testid="movie-overview">{movie.overview}</p>
             </div>
-            <div className="w-2/5 h-40">
+            <div className="w-2/5 h-40 border rounded-lg border-rose-700">
               <p data-testid="movie-release-date">
                 Release Date (UTC): {movie.release_date}
               </p>
