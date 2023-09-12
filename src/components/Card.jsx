@@ -1,52 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa"; // Import the FontAwesome heart icon
+import { useToasts } from "react-hot-toast";
 
 const Card = ({ posterBaseUrl, movie }) => {
-	return (
-		<Link
-			to={`/movie/${movie.id}`}
-			className="flex flex-col max-w-xs text-gray-900"
-			data-testid="movie-card"
-		>
-			<img
-				src={`${posterBaseUrl}${movie.poster_path}`}
-				alt={movie.title}
-				data-testid="movie-poster"
-				className="h-auto max-w-xs pb-3"
-			/>
-			<div className="flex flex-col pt-3">
-				<h2
-					data-testid="movie-title"
-					className="font-semibold text-lg pb-3"
-				>
-					{movie.title}
-				</h2>
-				<p data-testid="movie-release-date" className="pb-2">
-					Release Date: {movie.release_date}
-				</p>
-			</div>
-		</Link>
-	);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const { addToast } = useToasts();
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+    if (isFavorite) {
+      // Show a toast notification when removing from favorites
+      addToast(`${movie.title} removed from favorites.`, {
+        icon: "❌", // You can customize the icon
+        appearance: "success",
+      });
+    } else {
+      // Show a toast notification when adding to favorites
+      addToast(`${movie.title} added to favorites!`, {
+        icon: "❤️", // You can customize the icon
+        appearance: "success",
+      });
+    }
+  };
+
+  return (
+    <Link
+      to={`/movie/${movie.id}`}
+      className="flex flex-col max-w-xs text-gray-900"
+      data-testid="movie-card"
+    >
+      <img
+        src={`${posterBaseUrl}${movie.poster_path}`}
+        alt={movie.title}
+        data-testid="movie-poster"
+        className="h-auto max-w-xs pb-3"
+      />
+      <div className="flex flex-col pt-3">
+        <h2 data-testid="movie-title" className="font-semibold text-lg pb-3">
+          {movie.title}
+        </h2>
+        <p data-testid="movie-release-date" className="pb-2">
+          Release Date: {movie.release_date}
+        </p>
+        <button
+          onClick={toggleFavorite}
+          className={`text-xl cursor-pointer ${
+            isFavorite ? "text-red-500" : "text-gray-400"
+          }`}
+        >
+          <FaHeart />
+        </button>
+      </div>
+    </Link>
+  );
 };
 
 export default Card;
-
-// {
-// 	"adult": false,
-// 	"backdrop_path": "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg",
-// 	"genre_ids": [
-// 	  18,
-// 	  80
-// 	],
-// 	"id": 238,
-// 	"original_language": "en",
-// 	"original_title": "The Godfather",
-// 	"overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
-// 	"popularity": 132.488,
-// 	"poster_path": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
-// 	"release_date": "1972-03-14",
-// 	"title": "The Godfather",
-// 	"video": false,
-// 	"vote_average": 8.7,
-// 	"vote_count": 18602
-//  },
