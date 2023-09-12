@@ -24,10 +24,10 @@ const Header = () => {
 				</span>
 				<span>MovieBox</span>
 			</Link>
-			<div className="w-1/2 h-[100%] hidden md:flex md:items-center ">
+			<div className="w-1/2 h-[100%] hidden md:flex ">
 				<input
 					type="text"
-					className="bg-transparent outline-none px-3 py-[2px] w-4/5 h-full text-black"
+					className="bg-transparent outline-none border-b px-3 py-[2px] w-4/5 h-full text-black"
 					placeholder="What do you want to watch?"
 					value={query}
 					onChange={(e) => setQuery(e.target.value)}
@@ -35,15 +35,6 @@ const Header = () => {
 						navigate("/search");
 					}}
 				/>
-				<Link
-					className="h-full w-[20%]"
-					onClick={(e) => {
-						e.preventDefault();
-						searchMovies(query);
-					}}
-				>
-					<FontAwesomeIcon icon={faMagnifyingGlass} />
-				</Link>
 			</div>
 			<div className="flex items-center justify-end md:justify-around w-[30%] md:w-[20%] flex-row-reverse md:flex-row">
 				<button className="hidden md:block">
