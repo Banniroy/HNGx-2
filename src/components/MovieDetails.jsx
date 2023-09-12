@@ -42,37 +42,40 @@ const MovieDetails = () => {
 	}
 
 	return (
-  <div className="flex flex-row h-screen w-full">
-    <SideBbar />
-    <section className="mx-6 w-[100%] md:w-[80%] flex flex-col items-center">
-      <div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
-        <img
-          src={`${posterBaseUrl}${movie.poster_path}`}
-          alt={movie.title}
-          className="w-full h-auto object-contain"
-        />
-      </div>
+		<div className="flex flex-row h-screen w-full">
+			<SideBbar />
+			<section className=" w-[100%] md:w-[80%] flex flex-col items-center">
+				<div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
+					<img
+						src={`${posterBaseUrl}${movie.poster_path}`}
+						alt={movie.title}
+						className="w-full h-auto object-contain"
+					/>
+				</div>
 
-      <div className="rounded-2xl w-[90%] h-[24rem] mt-8 text-gray-900">
-        <section className="w-full flex items-center h-8">
-          <h2 className="font-semibold" data-testid="movie-title">{movie.title}</h2>
-        </section>
-        <section className="flex flex-col md:flex-row mt-4 w-[90%] md:w-fit gap-3">
-          <div className="w-full md:w-3/5 p-4">
-            <p data-testid="movie-overview">{movie.overview}</p>
-          </div>
-          <div className="w-full md:w-2/5 p-4 md:border rounded-lg border-rose-700">
-            <p data-testid="movie-release-date">
-              Release Date (UTC): {movie.release_date}
-            </p>
-            <p data-testid="movie-runtime">Runtime (minutes): {movie.runtime}</p>
-          </div>
-        </section>
-      </div>
-    </section>
-  </div>
-);
-
+				<div className="rounded-2xl w-[90%] h-[24rem] mt-8 text-gray-900">
+					<section className="w-full flex items-center h-8">
+						<h2 className="font-semibold" data-testid="movie-title">
+							{movie.title}
+						</h2>
+					</section>
+					<section className="flex flex-col md:flex-row mt-4 w-[90%] md:w-fitgap-3">
+						<div className="w-full md:w-3/5 py-4">
+							<p data-testid="movie-overview">{movie.overview}</p>
+						</div>
+						<div className="w-full md:w-2/5 py-4 md:border rounded-lg border-rose-700">
+							<p data-testid="movie-release-date">
+								Release Date: {movie.release_date}
+							</p>
+							<p data-testid="movie-runtime">
+								Runtime : {movie.runtime} minutes
+							</p>
+						</div>
+					</section>
+				</div>
+			</section>
+		</div>
+	);
 };
 
 export default MovieDetails;

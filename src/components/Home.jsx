@@ -34,23 +34,22 @@ const Home = () => {
 					<h1 className="font-extrabold text-rose-700 text-2xl">
 						Top 10 rated Movies
 					</h1>
-					<Link className="text-pink-600 hidden md:flex font-bold">
+					<Link className="text-pink-600 hidden md:flex font-bold items-center">
 						See more &nbsp;
 						<FontAwesomeIcon icon={faGreaterThan} />
 					</Link>
 				</div>
 				<div className="flex justify-center">
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-[90%]">
-    {movies.slice(0, 10).map((movie) => (
-      <Card
-        key={movie.id}
-        movie={movie}
-        posterBaseUrl={posterBaseUrl}
-      />
-    ))}
-  </div>
-</div>
-
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-[90%]">
+						{movies.slice(0, 10).map((movie) => (
+							<Card
+								key={movie.id}
+								movie={movie}
+								posterBaseUrl={posterBaseUrl}
+							/>
+						))}
+					</div>
+				</div>
 			</section>
 			<Footer />
 		</main>

@@ -32,7 +32,7 @@ const SideBbar = () => {
 				</Link>
 				<Link
 					to=""
-					className="flex items-center justify-evenly h-1/4 w-full active:bg-rose-100 focus-within:bg-rose-100 focus-within:border-r-4 focus-within:border-r-rose-700 hover:bg-rose-100 hover:border-r-rose-700 hover:border-r-4"
+					className="flex items-center justify-evenly h-1/4 w-full  bg-rose-100 border-r-4 border-r-rose-700"
 				>
 					<span className="flex justify-center items-center h-10 w-10 md:h-12 md:w-12">
 						<FontAwesomeIcon icon={faVideoCamera} />
