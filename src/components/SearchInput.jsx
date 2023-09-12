@@ -4,6 +4,7 @@ import { SearchApi } from "../../api/axios";
 import DataContext from "../context/DataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Loading from "./Loading-state/Loading";
 
 const SearchInput = () => {
 	const { apiKey, posterBaseUrl } = useContext(DataContext);
@@ -41,7 +42,7 @@ const SearchInput = () => {
 						}}
 					/>
 					<Link
-						className="border h-full w-[20%]"
+						className="h-full w-[20%]"
 						onClick={(e) => {
 							e.preventDefault();
 							searchMovies(query);
@@ -52,9 +53,7 @@ const SearchInput = () => {
 				</div>
 
 				<div className="border min-h-full h-fit w-full rounded-lg flex flex-col items-center">
-					{loading && (
-						<div className="h-40 w-40 rounded-sm bg-black"></div>
-					)}
+					{loading && <Loading />}
 
 					<div className="w-fit flex flex-wrap gap-4 mt-4 justify-center">
 						{results.map((movie) => (
@@ -69,7 +68,7 @@ const SearchInput = () => {
 										className="w-32 h-auto object-cover"
 									/>
 								) : (
-									<div className="w-32 h-48 bg-gray-300">
+									<div className="w-32 h-48 bg-gray-300 text-black">
 										No Poster Available
 									</div>
 								)}
