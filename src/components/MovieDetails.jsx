@@ -45,7 +45,7 @@ const MovieDetails = () => {
   <div className="flex flex-row h-screen w-full">
     <SideBbar />
     <section className="mx-6 w-[100%] md:w-[80%] flex flex-col items-center">
-      <div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8">
+      <div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
         <img
           src={`${posterBaseUrl}${movie.poster_path}`}
           alt={movie.title}
