@@ -63,10 +63,11 @@ const SearchInput = () => {
               >
                 {movie.poster_path ? (
                   <img
-                    src={`${posterBaseUrl}${movie.poster_path}`}
-                    alt={`${movie.title} Poster`}
-                    className="w-full h-auto"
-                  />
+  src={`${posterBaseUrl}${movie.poster_path}`}
+  alt={`${movie.title} Poster`}
+  className="w-full h-auto xs:w-xs md:w-md lg:w-md"
+/>
+
                 ) : (
                   <div>No Poster Available</div>
                 )}
