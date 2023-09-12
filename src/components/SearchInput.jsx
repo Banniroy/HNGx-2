@@ -1,9 +1,3 @@
-
-    </section>
-  );
-};
-
-export default SearchInput;
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SearchApi } from "../../api/axios";
