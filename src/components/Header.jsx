@@ -24,7 +24,7 @@ const Header = () => {
 				</span>
 				<span>MovieBox</span>
 			</Link>
-			<div className="w-1/2 h-[100%] hidden md:flex md:items-center">
+			<div className="w-1/2 h-[60%] hidden md:flex md:items-center">
 				<input
 					type="text"
 					className="bg-transparent outline-none border-b px-3 py-[2px] w-4/5 h-full text-black"
@@ -36,7 +36,7 @@ const Header = () => {
 					}}
 				/>
 				<Link
-					className="h-full w-[20%]"
+					className="h-full w-[20%] flex justify-center items-center"
 					onClick={(e) => {
 						e.preventDefault();
 						searchMovies(query);
