@@ -35,15 +35,9 @@ const Header = () => {
 						navigate("/search");
 					}}
 				/>
-				<Link
-					className="h-full w-[20%] flex justify-center items-center"
-					onClick={(e) => {
-						e.preventDefault();
-						searchMovies(query);
-					}}
-				>
+				
 					<FontAwesomeIcon icon={faMagnifyingGlass} />
-				</Link>
+				
 			</div>
 			<div className="flex items-center justify-end md:justify-around w-[30%] md:w-[20%] flex-row-reverse md:flex-row">
 				<button className="hidden md:block">
