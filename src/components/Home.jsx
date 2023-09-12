@@ -31,7 +31,7 @@ const Home = () => {
 
 			<section className="h-full max-w-[99%] flex flex-col justify-center items-center pt-9">
 				<div className="flex justify-center md:justify-between items-center w-[95%] my-8 mb-14">
-					<h1 className="font-extrabold text-2xl">
+					<h1 className="font-extrabold text-rose-700 text-2xl">
 						Top 10 rated Movies
 					</h1>
 					<Link className="text-pink-600 hidden md:flex font-bold">
