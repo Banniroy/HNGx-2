@@ -44,7 +44,7 @@ const MovieDetails = () => {
 	return (
     <div className="flex flex-row h-screen w-full">
       <SideBbar />
-      <section className="mx-6 w-[80%] flex flex-col items-center">
+      <section className="mx-6 w-[95%] md:w-[80%] flex flex-col items-center">
         <div className="border border-red-900 rounded-2xl w-[90%] h-[18rem] mt-8 overflow-y-hidden">
           <img
             src={`${posterBaseUrl}${movie.poster_path}`}
@@ -55,9 +55,9 @@ const MovieDetails = () => {
 
         <div className="rounded-2xl w-[90%] h-[24rem] mt-8 text-gray-900">
           <section className="w-full flex items-center h-8">
-            <h2 data-testid="movie-title">{movie.title}</h2>
+            <h2 className="font-semibold" data-testid="movie-title">{movie.title}</h2>
           </section>
-          <section className="flex mt-4 gap-3">
+          <section className="flex flex-col md:flex-row mt-4 w-[90%] md:w-fit gap-3">
             <div className="w-3/5 h-40 p-4">
               <p data-testid="movie-overview">{movie.overview}</p>
             </div>
