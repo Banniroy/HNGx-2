@@ -58,10 +58,10 @@ const MovieDetails = () => {
             <h2 className="font-semibold" data-testid="movie-title">{movie.title}</h2>
           </section>
           <section className="flex flex-col md:flex-row mt-4 w-[90%] md:w-fit gap-3">
-            <div className="w-3/5 h-40 p-4">
+            <div className="w-full md:w-3/5 h-40 p-4">
               <p data-testid="movie-overview">{movie.overview}</p>
             </div>
-            <div className="w-2/5 h-40 p-4 border rounded-lg border-rose-700">
+            <div className="w-full md:w-2/5 h-40 p-4 border rounded-lg border-rose-700">
               <p data-testid="movie-release-date">
                 Release Date (UTC): {movie.release_date}
               </p>
