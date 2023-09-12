@@ -53,7 +53,7 @@ const MovieDetails = () => {
           />
         </div>
 
-        <div className="rounded-2xl w-[90%] h-[18rem] mt-8 text-gray-900">
+        <div className="rounded-2xl w-[90%] min-h-[18rem] mt-8 text-gray-900">
           <section className="w-full flex items-center h-8">
             <h2 data-testid="movie-title">{movie.title}</h2>
           </section>
