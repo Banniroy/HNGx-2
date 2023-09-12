@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faTv } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+	const [query, setQuery] = useState("");
+	const navigate = useNavigate();
+
 	return (
 		<header className="w-full md:w-full flex flex-row-reverse md:flex-row items-center justify-between h-16 px-4 bg-red-900 text-white sticky md:fixed top-0">
 			<div className="md:hidden w-[10%]">
@@ -22,7 +25,25 @@ const Header = () => {
 				<span>MovieBox</span>
 			</Link>
 			<div className="w-1/2 h-[60%] hidden md:flex">
-				<SearchInput />
+				<input
+					type="text"
+					className="bg-transparent outline-none px-3 py-[2px] w-4/5 h-full text-black"
+					placeholder="What do you want to watch?"
+					value={query}
+					onChange={(e) => setQuery(e.target.value)}
+					onFocus={() => {
+						navigate("/search");
+					}}
+				/>
+				<Link
+					className="h-full w-[20%]"
+					onClick={(e) => {
+						e.preventDefault();
+						searchMovies(query);
+					}}
+				>
+					<FontAwesomeIcon icon={faMagnifyingGlass} />
+				</Link>
 			</div>
 			<div className="flex items-center justify-end md:justify-around w-[30%] md:w-[20%] flex-row-reverse md:flex-row">
 				<button className="hidden md:block">
