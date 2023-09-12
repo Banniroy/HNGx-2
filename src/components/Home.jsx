@@ -40,7 +40,7 @@ const Home = () => {
 					</Link>
 				</div>
 				<div className="flex justify-center">
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-full">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-[90%]">
     {movies.slice(0, 10).map((movie) => (
       <Card
         key={movie.id}
