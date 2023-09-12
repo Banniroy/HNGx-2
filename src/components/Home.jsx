@@ -30,7 +30,7 @@ const Home = () => {
 			</section>
 
 			<section className="h-full max-w-[99%] flex flex-col justify-center items-center pt-9">
-				<div className="flex justify-between items-center w-[95%] my-8 mb-14">
+				<div className="flex justify-center md:justify-between items-center w-[95%] my-8 mb-14">
 					<h1 className="font-extrabold text-lg">
 						Top 10 rated Movies
 					</h1>
