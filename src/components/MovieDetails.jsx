@@ -58,10 +58,10 @@ const MovieDetails = () => {
             <h2 data-testid="movie-title">{movie.title}</h2>
           </section>
           <section className="flex mt-4 gap-3">
-            <div className="w-3/5 h-40 border-rose-700 rounded-lg">
+            <div className="w-3/5 h-40 border border-rose-700 p-4 rounded-lg">
               <p data-testid="movie-overview">{movie.overview}</p>
             </div>
-            <div className="w-2/5 h-40 border rounded-lg border-rose-700">
+            <div className="w-2/5 h-40 p-4 border rounded-lg border-rose-700">
               <p data-testid="movie-release-date">
                 Release Date (UTC): {movie.release_date}
               </p>
