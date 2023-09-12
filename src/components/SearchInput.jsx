@@ -30,7 +30,7 @@ const SearchInput = () => {
   return (
     <section className="bg-gray-100 p-4">
       <div className="container mx-auto">
-        <div className="flex items-center sticky top-0 md:static py-2 bg-rose-100 w-full space-x-4">
+        <div className="flex items-center space-x-4">
           <input
             className="border rounded py-2 px-4 w-3/4"
             type="text"
