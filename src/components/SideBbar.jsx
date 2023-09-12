@@ -12,7 +12,7 @@ import {
 
 const SideBbar = () => {
 	return (
-		<section className="h-full w-48 border border-slate-900 rounded-r-[4rem] py-12">
+		<section className="h-full hidden md:block w-48 border border-slate-900 rounded-r-[4rem] py-12">
 			<Link to="/" className="flex items-center justify-evenly">
 				<span className=" rounded-full bg-rose-700 flex justify-center items-center text-white h-10 w-10 md:h-12 md:w-12">
 					<FontAwesomeIcon icon={faTv} />
