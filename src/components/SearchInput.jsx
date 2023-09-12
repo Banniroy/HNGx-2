@@ -42,7 +42,7 @@ const SearchInput = () => {
             }}
           />
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded py-2 px-4"
+            className="bg-rose-700 hover:bg-rose-300 text-white rounded py-2 px-4"
             onClick={(e) => {
               e.preventDefault();
               searchMovies(query);
