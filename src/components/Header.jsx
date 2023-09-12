@@ -11,7 +11,7 @@ const Header = () => {
 	return (
 		<header className="w-full md:w-full flex flex-row-reverse md:flex-row items-center justify-between h-16 px-4 bg-red-900 text-white sticky md:fixed top-0">
 			<div className="md:hidden w-[10%]">
-				<Link className="text-2xl">
+				<Link to="/search" className="text-2xl">
 					<FontAwesomeIcon icon={faMagnifyingGlass} />
 				</Link>
 			</div>
