@@ -13,7 +13,7 @@ const Home = () => {
 	return (
 		<main className="h-full w-full relative">
 			<Header />
-			<div className="h-[40rem] relative w-full overflow-y-hidden">
+			<div className=" h-fit md:h-[40rem] relative w-full bg-red-300 overflow-y-hidden">
 				<img
 					src={wallpaper}
 					alt="Wallpaper"
@@ -21,8 +21,10 @@ const Home = () => {
 					className="h-auto w-full"
 				/>
 				<div className="h-full absolute top-0 opacity-30 w-full bg-black"></div>
-				<div className="absolute top-40 left-20 w-[35%] h-fit p-4 flex flex-col gap-4">
-					<h1 className="lg:text-6xl text-slate-50">Interstellar:</h1>
+				<div className="absolute top-0 md:top-40 left-20 w-[90%] md:w-[35%] h-fit p-4 flex flex-col gap-4">
+					<h1 className="lg:text-6xl text-xl text-slate-50">
+						Interstellar:
+					</h1>
 					<div className="flex items-center justify-between w-[70%]">
 						<div className=" text-black w-fit">
 							<b className="bg-yellow-500 font-bold px-2 py-1 rounded-sm shadow-sm w-fit mr-5">
@@ -32,15 +34,15 @@ const Home = () => {
 						</div>
 						<p className="text-white text-lg">&#127813; 85%</p>
 					</div>
-					<p className="text-white text-xl">
+					<p className="text-white text- hidden md:block">
 						In the continuing saga of the Corleone crime family, a
 						young Vito Corleone grows up in Sicily and in 1910s New
 						York. In the 1950s, Michael Corleone attempts to expand
 						the family business into Las Vegas, Hollywood and Cuba.
 					</p>
-					<div className="bg-rose-700 w-[45%] h-12 flex justify-evenly items-center rounded-md text-white cursor-pointer hover:bg-rose-800">
+					<div className="bg-rose-700 w-fit md:w-[45%] md:h-12 py-1 px-2 flex justify-evenly items-center rounded-md text-white cursor-pointer hover:bg-rose-800">
 						<FontAwesomeIcon
-							className="text-2xl"
+							className="md:text-2xl"
 							icon={faPlayCircle}
 						/>
 						<p>WATCH TRAILER</p>
