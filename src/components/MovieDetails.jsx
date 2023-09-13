@@ -52,6 +52,56 @@ const MovieDetails = () => {
 		);
 	}
 
+	// Function to calculate rating percentage
+	const RatePercentage = (voteAverage) => {
+		// Calculate the percentage and round it to one decimal place
+		const percentage = (voteAverage / 10) * 100;
+		return percentage.toFixed(1);
+	};
+
+	const formatVoteCount = (count) => {
+		if (count >= 1000) {
+			const roundedCount = Math.round(count / 100) / 10;
+			return `${roundedCount}k`;
+		}
+		return count.toString();
+	};
+
+	const allGenres = [
+		{ id: 28, name: "Action" },
+		{ id: 12, name: "Adventure" },
+		{ id: 16, name: "Animation" },
+		{ id: 35, name: "Comedy" },
+		{ id: 80, name: "Crime" },
+		{ id: 99, name: "Documentary" },
+		{ id: 18, name: "Drama" },
+		{ id: 10751, name: "Family" },
+		{ id: 14, name: "Fantasy" },
+		{ id: 36, name: "History" },
+		{ id: 27, name: "Horror" },
+		{ id: 10402, name: "Music" },
+		{ id: 9648, name: "Mystery" },
+		{ id: 10749, name: "Romance" },
+		{ id: 878, name: "Science Fiction" },
+		{ id: 10770, name: "TV Movie" },
+		{ id: 53, name: "Thriller" },
+		{ id: 10752, name: "War" },
+		{ id: 37, name: "Western" },
+	];
+
+	// Function to get genre names based on genre IDs
+	const getGenreNames = (genreIds) => {
+		if (!Array.isArray(genreIds)) {
+			return "Genre data not available";
+		}
+
+		const genreNames = genreIds.map((genreId) => {
+			const genre = allGenres.find((genre) => genre.id === genreId);
+			return genre ? genre.name : "";
+		});
+		return genreNames.filter(Boolean).join(", ");
+	};
+
 	return (
 		<section className="m-h-screen md:h-screen w-full flex justify-center">
 			<div className="w-[90%] md:w-full h-full flex flex-row gap-10">
@@ -86,7 +136,8 @@ const MovieDetails = () => {
 									{movie.runtime}min
 								</p>
 								<p className="border text-sm border-rose-700 rounded-md px-1 text-rose-700">
-									Action
+									Actions
+									{/* {movie.genre_ids} */}
 								</p>
 								<p className="border border-rose-700 rounded-md px-1 text-rose-700 text-sm">
 									Drama
@@ -99,10 +150,10 @@ const MovieDetails = () => {
 										icon={faStar}
 									/>
 									<p className="text-slate-200">
-										{movie.vote_average}
+										{RatePercentage(movie.vote_average)}
 									</p>
 								</div>
-								| <p>{movie.vote_count}</p>
+								| <p>{formatVoteCount(movie.vote_count)}</p>
 							</div>
 						</section>
 

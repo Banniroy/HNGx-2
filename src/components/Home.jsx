@@ -55,7 +55,7 @@ const Home = () => {
 						Interstellar:
 					</h1>
 
-					<div className="flex items-center justify-between w-full md:w-[70%]">
+					<div className="flex items-center justify-between w-[60%] md:w-[70%]">
 						<div className=" text-black w-fit">
 							<b className="bg-yellow-500 font-bold py-[2px] px-2 md:py-2 md:px-3 rounded-sm shadow-sm w-fit mr-5">
 								IMDb

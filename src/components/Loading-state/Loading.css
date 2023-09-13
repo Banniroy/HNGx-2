@@ -18,7 +18,7 @@
 .Loading .loading-container .loader {
     height: 1rem;
     width: 1rem;
-    background-color: black;
+    background-color: rgb(179, 43, 66);
     border-radius: 50%;
 
     display: flex;

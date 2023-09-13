@@ -13,7 +13,7 @@ export const DataProvider = ({ children }) => {
 		const fetchTop10Movies = async () => {
 			try {
 				const response = await axios.get(
-					`/top_rated?api_key=${apiKey}&language=en-US&page=1`
+					`/popular?api_key=${apiKey}&language=en-US&page=1`
 				);
 
 				if (response.status === 200) {
