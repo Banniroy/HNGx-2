@@ -5,14 +5,14 @@ import Home from "./components/Home";
 import SearchInput from "./components/SearchInput";
 
 function App() {
-const location = useLocation();
-	
+	const location = useLocation();
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [location.pathname]);
-	
+
 	return (
-		<main className="App h-full w-full">
+		<main className="App h-full w-full fontRoboto">
 			<Routes>
 				<Route exact path="/" element={<Home />} />
 				<Route exact path="/movie/:id" element={<MovieDetails />} />

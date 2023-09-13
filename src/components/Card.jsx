@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons"; // Import the heart icon
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Toaster, toast } from "react-hot-toast"; // Import the Toaster and toast
 
 const Card = ({ posterBaseUrl, movie }) => {
 	const [isFavorite, setIsFavorite] = useState(false);
 
+	const showToast = () => {
+		if (isFavorite) {
+			toast.error(`${movie.title} Removed from favorites!`);
+		} else {
+			toast.success(`${movie.title} Added to favorites!`);
+		}
+	};
+
 	const toggleFavorite = () => {
 		setIsFavorite(!isFavorite);
+		showToast();
 	};
 
 	return (
@@ -47,6 +57,7 @@ const Card = ({ posterBaseUrl, movie }) => {
 					data-testid="heart-icon"
 				/>
 			</button>
+			<Toaster /> {/* Add the Toaster component */}
 		</div>
 	);
 };

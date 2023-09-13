@@ -14,7 +14,15 @@ import SideBbar from "./SideBbar";
 import Loading from "./Loading-state/Loading";
 
 const MovieDetails = () => {
-	const { apiKey, posterBaseUrl } = useContext(DataContext);
+	const {
+		apiKey,
+		posterBaseUrl,
+		director,
+		writers,
+		stars,
+		fetchMovieDetails,
+	} = useContext(DataContext);
+
 	const { id } = useParams();
 	const [movie, setMovie] = useState(null);
 
@@ -42,11 +50,12 @@ const MovieDetails = () => {
 	useEffect(() => {
 		// Fetch movie data when the component mounts
 		fetchMovieData(id);
+		fetchMovieDetails(id);
 	}, [id]);
 
 	if (!movie) {
 		return (
-			<div className="h-full w-full flex justify-center items-center ">
+			<div className="flex items-center justify-center w-full h-full ">
 				<Loading />
 			</div>
 		);
@@ -103,16 +112,16 @@ const MovieDetails = () => {
 	};
 
 	return (
-		<section className="m-h-screen md:h-screen w-full flex justify-center">
+		<section className="flex justify-center w-full m-h-screen md:h-screen">
 			<div className="w-[90%] md:w-full h-full flex flex-row gap-10">
 				<SideBbar />
 
-				<section className=" w-full md:w-[80%] flex flex-col justify-evenly items-center">
+				<section className="md:ml-[14rem] w-full md:w-[80%] flex flex-col justify-evenly items-center py-4">
 					<div className="border border-red-900 rounded-2xl w-full h-[47%] overflow-y-hidden relative">
 						<img
 							src={`${posterBaseUrl}${movie.poster_path}`}
 							alt={movie.title}
-							className="w-full h-auto object-contain"
+							className="object-contain w-full h-auto"
 						/>
 						<FontAwesomeIcon
 							className="text-2xl sm:text-3xl md:first-letter:text-5xl lg:text-7xl absolute top-[50%] left-[50%] text-black opacity-70"
@@ -135,18 +144,18 @@ const MovieDetails = () => {
 								<p data-testid="movie-runtime">
 									{movie.runtime}min
 								</p>
-								<p className="border text-sm border-rose-700 rounded-md px-1 text-rose-700">
+								<p className="px-1 text-sm border rounded-md border-rose-700 text-rose-700">
 									Actions
 									{/* {movie.genre_ids} */}
 								</p>
-								<p className="border border-rose-700 rounded-md px-1 text-rose-700 text-sm">
+								<p className="px-1 text-sm border rounded-md border-rose-700 text-rose-700">
 									Drama
 								</p>
 							</div>
-							<div className="w-fit flex pr-3 ">
+							<div className="flex pr-3 w-fit ">
 								<div className="flex items-center mr-2 ">
 									<FontAwesomeIcon
-										className="text-yellow-400 pr-2"
+										className="pr-2 text-yellow-400"
 										icon={faStar}
 									/>
 									<p className="text-slate-200">
@@ -157,25 +166,25 @@ const MovieDetails = () => {
 							</div>
 						</section>
 
-						<section className="flex justify-between flex-col md:flex-row mt-4 w-[90%] h-4/5 text-slate-700 md:w-fit gap-3">
-							<div className="w-full h-full md:w-3/5 flex flex-col justify-evenly">
+						<section className="flex justify-between flex-col md:flex-row mt-4 w-[90%] h-fit text-slate-700 md:w-fit gap-3 pb-4">
+							<div className="flex flex-col w-full h-full gap-4 md:w-3/5 justify-evenly">
 								<p data-testid="movie-overview">
 									{movie.overview}
 								</p>
-								<div>
+								<div className="flex items-start">
 									<p>Director:&nbsp;</p>
-									<p className="text-rose-700"></p>
+									<p className="text-rose-700">{director}</p>
 								</div>
-								<div>
+								<div className="flex items-start">
 									<p>Writers:&nbsp;</p>
-									<p className="text-rose-700"></p>
+									<p className="text-rose-700">{writers}</p>
 								</div>
-								<div>
+								<div className="flex items-start">
 									<p>Stars:&nbsp;</p>
-									<p className="text-rose-700"></p>
+									<p className="text-rose-700">{stars}</p>
 								</div>
 								<div className="flex justify-between items-centre">
-									<div className="bg-rose-700 min-h-[3rem] lg:h-11 rounded-md w-[47%] md:w-[35%] px-2 py-2 text-slate-300 text-center">
+									<div className="bg-rose-700 min-h-[3rem] lg:h-11 rounded-md w-[47%] md:w-[35%] px-2 py-2 text-slate-300 grid place-content-center">
 										Top rated movie
 									</div>
 									<div className="text-slate-700 min-h-[3rem] lg:h-11 w-[47%] md:w-[60%] border border-slate-700 rounded-md flex justify-between items-center px-2">
@@ -186,15 +195,15 @@ const MovieDetails = () => {
 							</div>
 
 							<div className="w-full md:w-[32%] rounded-lg flex gap-3 flex-col ">
-								<div className="bg-rose-700 rounded-md h-10 flex justify-center items-center text-slate-200 ">
+								<div className="flex items-center justify-center h-10 rounded-md bg-rose-700 text-slate-200 ">
 									<FontAwesomeIcon icon={faCalendar} />
 									<p className="pl-3">See Showtimes</p>
 								</div>
-								<div className="flex h-10 justify-center rounded-md items-center border border-rose-700">
+								<div className="flex items-center justify-center h-10 border rounded-md border-rose-700">
 									<FontAwesomeIcon icon={faEllipsisV} />
 									<p className="pl-3">More watch options</p>
 								</div>
-								<div className=" overflow-hidden rounded-md h-1/2 gap-2 flex">
+								<div className="flex gap-2 overflow-hidden rounded-md h-1/2">
 									<img
 										src={`${posterBaseUrl}${movie.poster_path}`}
 										alt={movie.title}

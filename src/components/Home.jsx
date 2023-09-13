@@ -13,7 +13,7 @@ import Footer from "./Footer";
 const Home = () => {
 	const { movies, posterBaseUrl } = useContext(DataContext);
 	return (
-		<main className="h-full w-full relative">
+		<main className="h-full w-full relative ">
 			<Header />
 			<div className=" h-fit md:h-[32rem] relative w-full bg-red-300 overflow-y-hidden">
 				{/* SM */}
