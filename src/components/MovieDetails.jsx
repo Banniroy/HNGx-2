@@ -130,7 +130,7 @@ const MovieDetails = () => {
 									{movie.title}
 								</h2>
 								<p data-testid="movie-release-date">
-									{movie.release_date.slice(0, 4)}
+									{movie.release_date}
 								</p>
 								<p data-testid="movie-runtime">
 									{movie.runtime}min
