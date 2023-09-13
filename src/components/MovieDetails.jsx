@@ -6,6 +6,7 @@ import {
 	faArrowDown,
 	faEllipsisV,
 	faCalendar,
+	faPlay,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "../../api/axios";
 import DataContext from "../context/DataContext";
@@ -52,22 +53,26 @@ const MovieDetails = () => {
 	}
 
 	return (
-		<section className="h-screen w-full flex justify-center">
+		<section className="m-h-screen md:h-screen w-full flex justify-center">
 			<div className="w-[90%] md:w-full h-full flex flex-row gap-10">
 				<SideBbar />
 
 				<section className=" w-full md:w-[80%] flex flex-col justify-evenly items-center">
-					<div className="border border-red-900 rounded-2xl w-full h-[47%] overflow-y-hidden">
+					<div className="border border-red-900 rounded-2xl w-full h-[47%] overflow-y-hidden relative">
 						<img
 							src={`${posterBaseUrl}${movie.poster_path}`}
 							alt={movie.title}
 							className="w-full h-auto object-contain"
 						/>
+						<FontAwesomeIcon
+							className="text-2xl sm:text-3xl md:first-letter:text-5xl lg:text-7xl absolute top-[50%] left-[50%] text-black opacity-70"
+							icon={faPlay}
+						/>
 					</div>
 
-					<div className="w-full h-[45%] text-gray-900 mb-4">
-						<section className="w-full flex items-center justify-between h-8 text-slate-700">
-							<div className="w-[65%] flex gap-3  md:gap-8 items-center md:text-xl">
+					<div className="w-full h-fit md:h-[45%] text-gray-900 my-7">
+						<section className="w-full flex flex-col items-center justify-between md:flex-row min-h-[4rem] md:h-8 text-slate-700">
+							<div className=" w-full md:w-[61%] flex gap-3  md:gap-6 items-center md:text-xl">
 								<h2
 									className="font-semibold"
 									data-testid="movie-title"
@@ -75,10 +80,10 @@ const MovieDetails = () => {
 									{movie.title}
 								</h2>
 								<p data-testid="movie-release-date">
-									{movie.release_date}
+									{movie.release_date.slice(0, 4)}
 								</p>
 								<p data-testid="movie-runtime">
-									{movie.runtime}m
+									{movie.runtime}min
 								</p>
 								<p className="border text-sm border-rose-700 rounded-md px-1 text-rose-700">
 									Action
@@ -119,10 +124,10 @@ const MovieDetails = () => {
 									<p className="text-rose-700"></p>
 								</div>
 								<div className="flex justify-between items-centre">
-									<div className="bg-rose-700 h-11 rounded-md w-[35%] px-2 py-2 text-slate-300 text-center">
-										Top rated movie &nbsp; #65
+									<div className="bg-rose-700 min-h-[3rem] lg:h-11 rounded-md w-[47%] md:w-[35%] px-2 py-2 text-slate-300 text-center">
+										Top rated movie
 									</div>
-									<div className="text-slate-700 h-11 w-[60%] border border-slate-700 rounded-md flex justify-between items-center px-2">
+									<div className="text-slate-700 min-h-[3rem] lg:h-11 w-[47%] md:w-[60%] border border-slate-700 rounded-md flex justify-between items-center px-2">
 										<p>Awards 9 nominations</p>
 										<FontAwesomeIcon icon={faArrowDown} />
 									</div>
