@@ -29,7 +29,7 @@ const Card = ({ posterBaseUrl, movie }) => {
 					className="w-full h-auto"
 					data-testid="movie-poster"
 				/>
-				<div className="p-4">
+				<div className="p-4 ">
 					<h2
 						className="text-xl font-semibold"
 						data-testid="movie-title"
@@ -40,7 +40,7 @@ const Card = ({ posterBaseUrl, movie }) => {
 						className="text-gray-600"
 						data-testid="movie-release-date"
 					>
-						Release Date: {movie.release_date}
+						{movie.release_date.slice(0, 4)}
 					</p>
 				</div>
 			</Link>
