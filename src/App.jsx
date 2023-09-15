@@ -12,10 +12,14 @@ function App() {
 	}, [location.pathname]);
 
 	return (
-		<main className="App h-full w-full fontRoboto">
+		<main className="w-full h-full App fontRoboto">
 			<Routes>
 				<Route exact path="/" element={<Home />} />
-				<Route exact path="/movie/:id" element={<MovieDetails />} />
+				<Route
+					exact
+					path="/movie/:movie_id"
+					element={<MovieDetails />}
+				/>
 				<Route exact path="/search" element={<SearchInput />} />
 			</Routes>
 		</main>

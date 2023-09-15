@@ -20,21 +20,21 @@ const Home = () => {
 				<img
 					src={wallpaperf}
 					alt="Wallpaper"
-					data-testid="randomMovie-poster"
+					data-testid="movie-poster"
 					className="w-full h-auto md:hidden "
 				/>
 				{/* MD */}
 				<img
 					src={wallpaperfla}
 					alt="Wallpaper"
-					data-testid="randomMovie-poster"
+					data-testid="movie-poster"
 					className="hidden w-full h-auto md:block lg:hidden"
 				/>
 				{/* LG */}
 				<img
 					src={wallpaper}
 					alt="Wallpaper"
-					data-testid="randomMovie-poster"
+					data-testid="movie-poster"
 					className="hidden w-full h-auto lg:block"
 				/>
 				<div className="absolute top-0 w-full h-full bg-black opacity-30"></div>

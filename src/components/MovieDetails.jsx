@@ -23,13 +23,13 @@ const MovieDetails = () => {
 		fetchMovieDetails,
 	} = useContext(DataContext);
 
-	const { id } = useParams();
+	const { movie_id } = useParams();
 	const [movie, setMovie] = useState(null);
 
-	async function fetchMovieData(id) {
+	async function fetchMovieData(movie_id) {
 		try {
-			// Fetch movie data based on the movieId from the TMDB API
-			const response = await axios.get(`/${id}`, {
+			// Fetch movie data based on the moviemovie_Id from the TMDB API
+			const response = await axios.get(`/${movie_id}`, {
 				params: {
 					api_key: apiKey,
 				},
@@ -49,9 +49,9 @@ const MovieDetails = () => {
 
 	useEffect(() => {
 		// Fetch movie data when the component mounts
-		fetchMovieData(id);
-		fetchMovieDetails(id);
-	}, [id]);
+		fetchMovieData(movie_id);
+		fetchMovieDetails(movie_id);
+	}, [movie_id]);
 
 	if (!movie) {
 		return (
@@ -117,7 +117,6 @@ const MovieDetails = () => {
 								</p>
 								<p className="px-1 text-sm border rounded-md border-rose-700 text-rose-700">
 									Actions
-									{/* {movie.genre_ids} */}
 								</p>
 								<p className="px-1 text-sm border rounded-md border-rose-700 text-rose-700">
 									Drama
@@ -179,16 +178,19 @@ const MovieDetails = () => {
 										src={`${posterBaseUrl}${movie.poster_path}`}
 										alt={movie.title}
 										className="w-[32%] h-auto object-cover "
+										data-testid="movie-poster"
 									/>
 									<img
 										src={`${posterBaseUrl}${movie.poster_path}`}
 										alt={movie.title}
 										className="w-[32%] h-auto object-cover "
+										data-testid="movie-poster"
 									/>
 									<img
 										src={`${posterBaseUrl}${movie.poster_path}`}
 										alt={movie.title}
 										className="w-[32%] h-auto object-cover "
+										data-testid="movie-poster"
 									/>
 								</div>
 							</div>
