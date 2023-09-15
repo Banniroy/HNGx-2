@@ -21,7 +21,10 @@ const Card = ({ posterBaseUrl, movie }) => {
 	};
 
 	return (
-		<div className="flex flex-col justify-center bg-white rounded-lg shadow-md">
+		<div
+			className="flex flex-col justify-center bg-white rounded-lg shadow-md"
+			data-testid="movie-card"
+		>
 			<Link to={`/movie/${movie.id}`}>
 				<img
 					src={`${posterBaseUrl}${movie.poster_path}`}

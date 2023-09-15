@@ -93,6 +93,7 @@ const MovieDetails = () => {
 							src={`${posterBaseUrl}${movie.poster_path}`}
 							alt={movie.title}
 							className="object-contain w-full h-auto"
+							data-testid="movie-poster"
 						/>
 						<FontAwesomeIcon
 							className="text-2xl sm:text-3xl md:first-letter:text-5xl lg:text-7xl absolute top-[50%] left-[50%] text-black opacity-70"
