@@ -76,41 +76,6 @@ const MovieDetails = () => {
 		return count.toString();
 	};
 
-	const allGenres = [
-		{ id: 28, name: "Action" },
-		{ id: 12, name: "Adventure" },
-		{ id: 16, name: "Animation" },
-		{ id: 35, name: "Comedy" },
-		{ id: 80, name: "Crime" },
-		{ id: 99, name: "Documentary" },
-		{ id: 18, name: "Drama" },
-		{ id: 10751, name: "Family" },
-		{ id: 14, name: "Fantasy" },
-		{ id: 36, name: "History" },
-		{ id: 27, name: "Horror" },
-		{ id: 10402, name: "Music" },
-		{ id: 9648, name: "Mystery" },
-		{ id: 10749, name: "Romance" },
-		{ id: 878, name: "Science Fiction" },
-		{ id: 10770, name: "TV Movie" },
-		{ id: 53, name: "Thriller" },
-		{ id: 10752, name: "War" },
-		{ id: 37, name: "Western" },
-	];
-
-	// Function to get genre names based on genre IDs
-	const getGenreNames = (genreIds) => {
-		if (!Array.isArray(genreIds)) {
-			return "Genre data not available";
-		}
-
-		const genreNames = genreIds.map((genreId) => {
-			const genre = allGenres.find((genre) => genre.id === genreId);
-			return genre ? genre.name : "";
-		});
-		return genreNames.filter(Boolean).join(", ");
-	};
-
 	const formatMinutesToHoursAndMinutes = (minutes) => {
 		const hours = Math.floor(minutes / 60);
 		const remainingMinutes = minutes % 60;
@@ -148,9 +113,7 @@ const MovieDetails = () => {
 									{movie.release_date.slice(0, 4)}
 								</p>
 								<p data-testid="movie-runtime">
-									{formatMinutesToHoursAndMinutes(
-										movie.runtime
-									)}
+									{movie.runtime}
 								</p>
 								<p className="px-1 text-sm border rounded-md border-rose-700 text-rose-700">
 									Actions

@@ -13,7 +13,7 @@ import Footer from "./Footer";
 const Home = () => {
 	const { movies, posterBaseUrl } = useContext(DataContext);
 	return (
-		<main className="h-full w-full relative ">
+		<main className="relative w-full h-full ">
 			<Header />
 			<div className=" h-fit md:h-[32rem] relative w-full bg-red-300 overflow-y-hidden">
 				{/* SM */}
@@ -21,23 +21,23 @@ const Home = () => {
 					src={wallpaperf}
 					alt="Wallpaper"
 					data-testid="randomMovie-poster"
-					className="h-auto w-full md:hidden "
+					className="w-full h-auto md:hidden "
 				/>
 				{/* MD */}
 				<img
 					src={wallpaperfla}
 					alt="Wallpaper"
 					data-testid="randomMovie-poster"
-					className="h-auto w-full hidden md:block lg:hidden"
+					className="hidden w-full h-auto md:block lg:hidden"
 				/>
 				{/* LG */}
 				<img
 					src={wallpaper}
 					alt="Wallpaper"
 					data-testid="randomMovie-poster"
-					className="h-auto w-full hidden lg:block"
+					className="hidden w-full h-auto lg:block"
 				/>
-				<div className="h-full absolute top-0 opacity-30 w-full bg-black"></div>
+				<div className="absolute top-0 w-full h-full bg-black opacity-30"></div>
 
 				<div className="absolute top-10 left-5 w-[90%] sm:w-[80%] md:top-[5rem] md:left-20 md:w-[70%] h-fit p-4 flex flex-col gap-4 ">
 					{/* SM */}
@@ -46,25 +46,25 @@ const Home = () => {
 					</h1>
 
 					{/* MD */}
-					<h1 className="text-2xl lg:text-6xl text-slate-50 hidden md:block md:text-4xl  lg:hidden">
+					<h1 className="hidden text-2xl lg:text-6xl text-slate-50 md:block md:text-4xl lg:hidden">
 						Dune:
 					</h1>
 
 					{/* LG */}
-					<h1 className="text-2xl lg:text-6xl text-slate-50 hidden lg:block">
+					<h1 className="hidden text-2xl lg:text-6xl text-slate-50 lg:block">
 						Interstellar:
 					</h1>
 
 					<div className="flex items-center justify-between w-[60%] md:w-[70%]">
-						<div className=" text-black w-fit">
+						<div className="text-black w-fit">
 							<b className="bg-yellow-500 font-bold py-[2px] px-2 md:py-2 md:px-3 rounded-sm shadow-sm w-fit mr-5">
 								IMDb
 							</b>
 							<span className="text-white ">84.00/100</span>
 						</div>
-						<p className="text-white text-lg">&#127813; 85%</p>
+						<p className="text-lg text-white">&#127813; 85%</p>
 					</div>
-					<p className="text-white hidden sm:block sm:text-xl md:text-2xl">
+					<p className="hidden text-white sm:block sm:text-xl md:text-2xl">
 						In the continuing saga of the Corleone crime family, a
 						young Vito Corleone grows up in Sicily and in 1910s New
 						York. In the 1950s, Michael Corleone attempts to expand
@@ -82,10 +82,10 @@ const Home = () => {
 
 			<section className="h-fit max-w-[99%] flex flex-col justify-center items-center pt-9">
 				<div className="flex justify-center md:justify-between items-center w-[95%] my-8 mb-14">
-					<h1 className="font-extrabold text-rose-700 text-2xl">
+					<h1 className="text-2xl font-extrabold text-rose-700">
 						Top 10 rated Movies
 					</h1>
-					<Link className="text-pink-600 hidden md:flex font-bold items-center">
+					<Link className="items-center hidden font-bold text-pink-600 md:flex">
 						See more &nbsp;
 						<FontAwesomeIcon icon={faGreaterThan} />
 					</Link>
@@ -94,6 +94,7 @@ const Home = () => {
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-[90%]">
 						{movies.slice(0, 10).map((movie) => (
 							<Card
+								data-testid="movie-card"
 								key={movie.id}
 								movie={movie}
 								posterBaseUrl={posterBaseUrl}
