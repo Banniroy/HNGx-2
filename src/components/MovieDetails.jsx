@@ -113,7 +113,7 @@ const MovieDetails = () => {
 									{movie.release_date.slice(0, 4)}
 								</p>
 								<p data-testid="movie-runtime">
-									{movie.runtime}
+									{movie.runtime}minutes
 								</p>
 								<p className="px-1 text-sm border rounded-md border-rose-700 text-rose-700">
 									Actions
